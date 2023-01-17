@@ -1,27 +1,25 @@
 package Pages;
 
-import static org.testng.Assert.assertTrue; 
 
-import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.util.Assert;
 
 import ApplicationUtilities.Application;
 import BaseLibrary.Base;
 import ExcelUti.Excel;
-
+import Propertyfile.Proeprtyfile;
+ 
 public class Login extends Base
 {
 
-	String path="D:\\eclipse-workspace\\ACL\\ExcelRead\\ENTR TENNT DETILS.xlsx";
+	String path="D:\\eclipse-workspace\\TestACL\\ExcelRead\\enter tenant details.xlsx";
+	String path2="D:\\eclipse-workspace\\TestACL\\ExcelRead\\Tenant admin details.xlsx";
 	
 	String pathh="D:\\Documents\\logo.png";
 	
@@ -30,15 +28,17 @@ public class Login extends Base
 	{
 		
 		PageFactory.initElements(driver, this);
-	}
+	}	
 	
 	@FindBy(xpath="//*[@formcontrolname='userID']")
 	private WebElement username;
 	
 	@FindBy(xpath="//*[@formcontrolname='password']")
-	private WebElement password;
+	private WebElement pwd;
 	
-	@FindBy(xpath="//*[@class='mb-15px']")
+	
+	
+	@FindBy(xpath="//*[contains(text(),'Sign in')]")
 	private WebElement signin;
 	
 	@FindBy(xpath="//*[@routerlink='tenent']")
@@ -126,6 +126,25 @@ public class Login extends Base
 	@FindBy(xpath="(//*[@class='btn btn-primary'])[5]")
 	private WebElement complete ;
 	
+	@FindBy(xpath="(//*[@class='btn btn-primary'])[5]")
+	private WebElement sa ;
+	
+	@FindBy(xpath="//*[@formgroupname='tenantAdminName']/div/div/div/input[@placeholder='Firstname']")
+	private WebElement Tenantfirstname ;
+	
+	@FindBy(xpath="//*[@formgroupname='tenantAdminName']/div/div/div/input[@placeholder='Lastname']")
+	private WebElement Tenantlastname ;
+	
+	@FindBy(xpath="(//*[@formcontrolname='email'])[2]")
+	private WebElement Tenantemail ;
+	
+	@FindBy(xpath="(//*[@class='btn btn-primary'])[3]")
+	private WebElement svv3 ;
+
+	@FindBy(xpath="//*[contains(text(),'Sign in')]")
+	private WebElement AD ;
+	
+	
 	
 	
 	
@@ -135,63 +154,19 @@ public class Login extends Base
 		try 
 		{
 			System.out.println("Launching the browser");
-            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			Application.waitforanelement(AD);
+			String Tool=Proeprtyfile.Getpropertyvalue("url");
+			getlaunch(Tool);
+			
            
-            
 		}
 	
 		catch (Exception e) 
 			{
 				System.out.println("Issue in Signme method"+e);
+				
 			}
 	}
-	
-	
-	
-//	//@Test(dataProvider="credentials")
-////	public void VerifyLoginCredentials(String scenario,String usernamee,String passwordd)
-////	{
-////		try 
-////		{
-////			 username.sendKeys(usernamee);
-////	         password.sendKeys(passwordd); 
-////	         signin.click();
-////	            
-////	       if(scenario.equals("bothcorrect"))
-////	       {
-////	    	   WebElement PPP=driver.findElement(By.xpath("//*[@class='companyText']"));
-////	    	   assertTrue(PPP.isDisplayed(),"Login Not Success");
-////	       }
-////	       else if(scenario.equals("bothwrong"))
-////	       {
-////	    	   
-////	       }
-////	       else if(scenario.equals("correctusername"))
-////	       {
-////	    	   
-////	       }
-////	       else if(scenario.equals("correctpwd"))
-////	       {
-////	    	   
-////	       }
-////
-////      driver.close();
-////            
-////		}
-////	
-//		
-////	
-////	
-////	@DataProvider(name="credentials")
-////	public HashMap<String,HashMap<String, String>> getdata(){
-////		
-////		HashMap<String,HashMap<String, String>> obj = new HashMap<>();
-////		obj.put("bothcorrect", (HashMap<String, String>) new HashMap<>().put("admin", "admin"));
-////		obj.put("bothwrong", (HashMap<String, String>) new HashMap<>().put("adminn", "adminnnn"));
-////		obj.put("correctusername", (HashMap<String, String>) new HashMap<>().put("admin", "savage"));
-////		obj.put("correctpwd", (HashMap<String, String>) new HashMap<>().put("sinnn", "admin"));
-////	return obj;
-////	}
 	
 	
 	
@@ -200,40 +175,33 @@ public class Login extends Base
 	{
 		try 
 		{
-			
-			 username.sendKeys("sagar.mehra");
-	            Thread.sleep(2000);
-	            password.sendKeys("admin"); 
-	            Thread.sleep(2000);
-	            signin.click();
-	            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+	       
+            username.sendKeys("sagar.mehra");
+			Thread.sleep(2000);
+			pwd.sendKeys("admin");
+	        Thread.sleep(2000);
+	        signin.click();
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);			
+
 	            
 	          //Verify superadmin page
 	           WebElement P=driver.findElement(By.xpath("//*[@class='companyText']"));
-	            String S=P.getText();
+	            String SP=P.getText();
 	            String E="CATS CENTRAL MANAGEMENT CONSOLE";
-	            if(S.contains("E")) 
+	            if(SP.contains("E")) 
 				{
-					System.out.println("Text: " +S+	"is present.");
+					System.out.println("Text: " +SP+	" is present.");
 				}
 				
 				else
 				{
-					System.out.println("Text: " +S+	"is not present.");
+					System.out.println("Text: " +SP+	"is not present.");
 				}
 	           
 	            Thread.sleep(3000);
-	            ADD.click();
-	            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-
 	            
-	            
-	            
-			
-			
-			choosetenant.click();
-			Thread.sleep(3000);
-			sv.click();
+               driver.findElement(By.xpath("//*[@class='text-primary dstyle'][contains(text(),'IN2IT Systems and Services')]")).click();
+              
 		}
 			
 			
@@ -245,11 +213,21 @@ public class Login extends Base
 		}
 		
 	}
-		public void Entertennatdetails()
+	
+	
+	public void Entertennatdetails()
 		{
 			try 
 			{
-				String status=Excel.GetData(path, 1, 0);
+	            ADD.click();
+	            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);			
+		     	choosetenant.click();
+		    	Thread.sleep(3000);
+	     		sv.click();
+	            Thread.sleep(3000);
+
+		
+			String status=Excel.GetData(path, 1, 0);
 				System.out.println(status);
 				if(status.contains("YES"))
 				{
@@ -266,11 +244,6 @@ public class Login extends Base
 					TESTURL.sendKeys("fdf");
 					
 					Thread.sleep(2000);
-					toggle.click();
-					Thread.sleep(2000);
-					
-					logo.click();
-					
 					
 					address.sendKeys(Excel.GetData(path, 1, 2));	
 					Thread.sleep(2000);
@@ -291,21 +264,35 @@ public class Login extends Base
 					Thread.sleep(2000);
 					lastname.sendKeys(Excel.GetData(path, 1, 8));	
 					Thread.sleep(2000);
+					
+//					WebElement numberField=driver.findElement(By.xpath("//*[@formcontrolname='contactNumber']"));
+//					numberField.sendKeys("AASDFGfgf");
+//					String typedvalue = numberField.getAttribute("value");
+//					int size = typedvalue.length();
+//					 
+//					if (size == 0)
+//					{
+//						System.out.println("Alphabets are not allowed");
+//					}
+//					else
+//					{
+//						System.out.println("No Restriction");
+//						
+//					}
+			
+					
 					contact.sendKeys(Excel.GetData(path, 1, 9));	
 					Thread.sleep(8000);
 					Email.sendKeys(Excel.GetData(path, 1, 10));	
 					Thread.sleep(2000);
 					svv.click();
 					Thread.sleep(2000);
-					mvno.click();
-				    Thread.sleep(5000);
-
-
+					
 				
 				}
 				
-			}
 			
+			}	
 			catch (Exception e) 
 			{
 				System.out.println("Issue in Entertennatdetails method"+e);
@@ -319,17 +306,33 @@ public class Login extends Base
 			{
 				try 
 				{
-		           // driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		            driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		            String status=Excel.GetData(path2, 1, 0);
+					System.out.println(status);
+					if(status.contains("YES"))
+					{
+						Tenantfirstname.sendKeys(Excel.GetData(path, 1, 1));	
+						Thread.sleep(2000);
+						Tenantlastname.sendKeys(Excel.GetData(path, 1, 2));	
+						Thread.sleep(2000);
+						Tenantemail.sendKeys(Excel.GetData(path, 1, 3));
+						Thread.sleep(2000);
+						svv3.click();
 
-					toggle2.click();
-					Thread.sleep(3000);
-					GP.click();
-					Thread.sleep(3000);
-					svp.click();
-					Thread.sleep(2000);
+
+						
+//					FN.sendKeys("Sagar");
+//					Thread.sleep(3000);
+//					LN.sendKeys("Mehra");
+//					Thread.sleep(3000);
+//					maill.sendKeys("sagar.mehra@in2ittech.com");
+//					Thread.sleep(2000);
+//					GP.click();
+//					Thread.sleep(2000);
+//		      		svv3.click();
 					
 				}
-					
+			}	
 				catch (Exception e) 
 				{
 					System.out.println("Issue in createtenantadmin method"+e); 
@@ -349,14 +352,18 @@ public class Login extends Base
 				Thread.sleep(2000);
 				complete.click();	
 				
-				String t=" sagar.mehra@orkut00.com ";
+				String t= "Congratulation!"
+						+ "The Organization has been successfully created."
+						+ "An email has been sent to the tenant admin at"
+						+ "sagar.mehra@in2ittech.com";
 				if(driver.getPageSource().contains(t)) 
 				{
 					System.out.println("Text: "+t+	"is present.");
 				}
 				
-				else {
-					System.out.println("Text: "+t+	"is not present.");
+				else
+				{
+					System.out.println("Text: "+t+	" is not present.");
 
 				}
 				

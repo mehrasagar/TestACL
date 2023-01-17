@@ -13,7 +13,7 @@ public class ExtentReportsManager
 	public static ExtentTest logger;
 	
 	
-	public static ExtentReports gerReports()
+	public static ExtentReports getReports()
 	{
 		if(extent==null)
 		{

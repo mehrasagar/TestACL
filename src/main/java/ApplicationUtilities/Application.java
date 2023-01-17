@@ -1,6 +1,6 @@
 package ApplicationUtilities;
 
-import java.awt.AWTException;
+import java.awt.AWTException;  
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -8,10 +8,13 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import BaseLibrary.Base;
 
@@ -19,6 +22,7 @@ public class Application extends Base
 {
 
 static Actions act;
+
 
 
 
@@ -134,7 +138,23 @@ static Actions act;
 			robot.delay(250);
 			}		
 		
-		
-		
-		
+	  public static void waitforanelement(WebElement element)
+	    {
+	        try 
+	        {
+				WebDriverWait wait = new WebDriverWait(driver,20);
+				 wait.until(ExpectedConditions.presenceOfElementLocated((By) element));
+			}
+	        catch (Exception e)
+	        {
+				System.out.println("Issue in waitforanelement file");
+			}
+	    }
+
+	  
+	  
+	  
+	  
+	  
+	  
 }

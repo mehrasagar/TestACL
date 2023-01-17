@@ -1,28 +1,26 @@
 package Test;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
-
+import org.testng.annotations.Test; 
 
 import BaseLibrary.Base;
 import Pages.Login;
 
+
 public class LoginTest extends Base
 
 {
-	
-
-	 Login ob=null;
 		
-		@BeforeTest
+	 Login ob=new Login();
+		
+		@Test(priority=0,enabled=true)
 		public void getlaunch() 
 		{
 			
 			try 
 			{
-				getlaunch("http://10.0.1.33:8086/#/login");
-				ob=new Login();
+				getlaunch("http://10.0.1.104:8084/#/login");
+				
+				
 				
 			
 			} 
@@ -32,23 +30,9 @@ public class LoginTest extends Base
 			}
 		}
 		
-//		@Test(priority=0,enabled=true)
-//		public void getVerifyLoginCredentials() 
-//		{
-//			
-//			try 
-//			{
-//				ob.VerifyLoginCredentials(ob.getdata().toString(),ob.getdata().toString(),ob.getdata().toString());
-//			
-//			} 
-//			catch (Exception e)
-//			{
-//				System.out.println("Issue in getVerifyLoginCredentials method"+e);
-//			}
-//		}
+
 		
-		
-		@Test(priority=0,enabled=true)
+		@Test(priority=1,enabled=true)
 		public void getchoosetenant() 
 		{
 			
@@ -63,7 +47,7 @@ public class LoginTest extends Base
 			}
 		}
 		
-		@Test(priority=1,enabled=true)
+		@Test(priority=2,enabled=true)
 		public void getEntertennatdetails() 
 		{
 			
@@ -79,7 +63,7 @@ public class LoginTest extends Base
 		}
 		
 
-		@Test(priority=2,enabled=true)
+		@Test(priority=3,enabled=true)
 		public void getcreatetenantadmin() 
 		{
 			
@@ -96,7 +80,7 @@ public class LoginTest extends Base
 		
 		}
 		
-		@Test(priority=5,enabled=true)
+		@Test(priority=4,enabled=true)
 		public void getchooseservice() 
 		{
 			
