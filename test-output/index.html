@@ -56,7 +56,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,22 +104,27 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Test.LoginTest" class="method navigator-link" hash-for-method="getEntertennatdetails">getEntertennatdetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Test.LoginTest" class="method navigator-link" hash-for-method="getchooseservice">getchooseservice</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Test.LoginTest" class="method navigator-link" hash-for-method="getchoosetenant">getchoosetenant</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Test.ProductonboardTest" class="method navigator-link" hash-for-method="getcustomer">getcustomer</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="Test.LoginTest" class="method navigator-link" hash-for-method="getcreatetenantadmin">getcreatetenantadmin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Test.LoginTest" class="method navigator-link" hash-for-method="getlaunch">getlaunch</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Test.ProductonboardTest" class="method navigator-link" hash-for-method="getproductonboard">getproductonboard</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -142,6 +147,20 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="getEntertennatdetails">
+                  </a> <!-- getEntertennatdetails -->
+                  <span class="method-name">getEntertennatdetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getchooseservice">
+                  </a> <!-- getchooseservice -->
+                  <span class="method-name">getchooseservice</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="getchoosetenant">
                   </a> <!-- getchoosetenant -->
                   <span class="method-name">getchoosetenant</span>
@@ -149,31 +168,16 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="getcreatetenantadmin">
+                  </a> <!-- getcreatetenantadmin -->
+                  <span class="method-name">getcreatetenantadmin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="getlaunch">
                   </a> <!-- getlaunch -->
                   <span class="method-name">getlaunch</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Test.ProductonboardTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="getcustomer">
-                  </a> <!-- getcustomer -->
-                  <span class="method-name">getcustomer</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="getproductonboard">
-                  </a> <!-- getproductonboard -->
-                  <span class="method-name">getproductonboard</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -193,11 +197,6 @@
       &lt;class name=&quot;Test.LoginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- logintest --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Productonboardtest&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;Test.ProductonboardTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Productonboardtest --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -210,9 +209,6 @@
             <ul>
               <li>
                 <span class="test-name">logintest (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">Productonboardtest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -238,28 +234,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'getproductonboard')
-data.setCell(0, 2, 'Test.ProductonboardTest')
-data.setCell(0, 3, 40111);
+data.setCell(0, 1, 'getlaunch')
+data.setCell(0, 2, 'Test.LoginTest')
+data.setCell(0, 3, 12551);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'getlaunch')
+data.setCell(1, 1, 'getchoosetenant')
 data.setCell(1, 2, 'Test.LoginTest')
-data.setCell(1, 3, 12602);
+data.setCell(1, 3, 5458);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'getchoosetenant')
+data.setCell(2, 1, 'getEntertennatdetails')
 data.setCell(2, 2, 'Test.LoginTest')
-data.setCell(2, 3, 9705);
+data.setCell(2, 3, 28);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'getcustomer')
-data.setCell(3, 2, 'Test.ProductonboardTest')
-data.setCell(3, 3, 68);
+data.setCell(3, 1, 'getcreatetenantadmin')
+data.setCell(3, 2, 'Test.LoginTest')
+data.setCell(3, 3, 27);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'getchooseservice')
+data.setCell(4, 2, 'Test.LoginTest')
+data.setCell(4, 3, 25);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 18 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -274,20 +274,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">Test.LoginTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">getcreatetenantadmin</span>
-                <br/>
-                <span class="ignored-method-name">getchooseservice</span>
-                <br/>
-                <span class="ignored-method-name">getEntertennatdetails</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -303,18 +292,19 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getchoosetenant</span>
-                <span class="method-start">12611 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">Test.ProductonboardTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">getcustomer</span>
-                <span class="method-start">22374 ms</span>
+                <span class="method-start">12559 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">getproductonboard</span>
-                <span class="method-start">22443 ms</span>
+                <span class="method-name">getEntertennatdetails</span>
+                <span class="method-start">18022 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getcreatetenantadmin</span>
+                <span class="method-start">18053 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getchooseservice</span>
+                <span class="method-start">18084 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -200,7 +200,7 @@ public class Login extends Base
 	           
 	            Thread.sleep(3000);
 	            
-               driver.findElement(By.xpath("//*[@class='text-primary dstyle'][contains(text(),'IN2IT Systems and Services')]")).click();
+//               driver.findElement(By.xpath("//*[@class='text-primary dstyle'][contains(text(),'IN2IT Systems and Services')]")).click();
               
 		}
 			
@@ -228,7 +228,7 @@ public class Login extends Base
 
 		
 			String status=Excel.GetData(path, 1, 0);
-				System.out.println(status);
+				//System.out.println(status);
 				if(status.contains("YES"))
 				{
 					organizationname.sendKeys(Excel.GetData(path, 1, 1));	
@@ -306,32 +306,32 @@ public class Login extends Base
 			{
 				try 
 				{
-		            driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-		            String status=Excel.GetData(path2, 1, 0);
-					System.out.println(status);
-					if(status.contains("YES"))
-					{
-						Tenantfirstname.sendKeys(Excel.GetData(path, 1, 1));	
-						Thread.sleep(2000);
-						Tenantlastname.sendKeys(Excel.GetData(path, 1, 2));	
-						Thread.sleep(2000);
-						Tenantemail.sendKeys(Excel.GetData(path, 1, 3));
-						Thread.sleep(2000);
-						svv3.click();
+//		            driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+//		            String status2=Excel.GetData(path2, 1, 0);
+//					System.out.println(status2);
+//					if(status2.contains("YESS"))
+//					{
+//						Tenantfirstname.sendKeys(Excel.GetData(path, 1, 1));	
+//						Thread.sleep(2000);
+//						Tenantlastname.sendKeys(Excel.GetData(path, 1, 2));	
+//						Thread.sleep(2000);
+//						Tenantemail.sendKeys(Excel.GetData(path, 1, 3));
+//						Thread.sleep(2000);
+//						svv3.click();
 
 
 						
-//					FN.sendKeys("Sagar");
-//					Thread.sleep(3000);
-//					LN.sendKeys("Mehra");
-//					Thread.sleep(3000);
-//					maill.sendKeys("sagar.mehra@in2ittech.com");
-//					Thread.sleep(2000);
-//					GP.click();
-//					Thread.sleep(2000);
-//		      		svv3.click();
+					Tenantfirstname.sendKeys("Sagar");
+					Thread.sleep(3000);
+					Tenantlastname.sendKeys("Mehra");
+					Thread.sleep(3000);
+					Tenantemail.sendKeys("sagar.mehra@in2ittech.com");
+					Thread.sleep(2000);
+					GP.click();
+		            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);			
+					svv3.click();
 					
-				}
+				
 			}	
 				catch (Exception e) 
 				{
