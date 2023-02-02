@@ -1,5 +1,6 @@
 package Test;
 
+import org.testng.Reporter;
 import org.testng.annotations.Test; 
 
 import BaseLibrary.Base;
@@ -18,11 +19,9 @@ public class LoginTest extends Base
 			
 			try 
 			{
-				getlaunch("http://10.0.1.104:8084/#/login");
+				getlaunch("http://10.0.1.104:8084/#/login");				
 				
-				
-				
-			
+	
 			} 
 			catch (Exception e)
 			{

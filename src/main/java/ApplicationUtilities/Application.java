@@ -1,6 +1,6 @@
 package ApplicationUtilities;
-
-import java.awt.AWTException;   
+ 
+import java.awt.AWTException;    
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -8,7 +8,6 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -35,7 +34,8 @@ static Actions act;
 			
 		JavascriptExecutor js= (JavascriptExecutor)driver;
 			js.executeScript("arguments[0].scrollIntoView(true)",ele);
-		} catch (Exception e) 
+		} 
+		catch (Exception e) 
 		{
 			System.out.println("Issue in ScrollByxpath method");
 		}
