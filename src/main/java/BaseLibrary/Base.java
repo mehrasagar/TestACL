@@ -20,5 +20,4 @@ public class Base
 		driver.manage().window().maximize();
 	
 	}
-	
 }
