@@ -1,14 +1,14 @@
 package Pages;
 
 
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeUnit;  
 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import org.testng.Assert;
 
 import ApplicationUtilities.Application;
 import BaseLibrary.Base;
@@ -144,7 +144,8 @@ public class Login extends Base
 	@FindBy(xpath="//*[contains(text(),'Sign in')]")
 	private WebElement AD ;
 	
-	
+	@FindBy(xpath="//*[@class='img-fluid innerImage']//..")
+	private WebElement logoo ;
 	
 	
 	
@@ -200,7 +201,8 @@ public class Login extends Base
 	           
 	            Thread.sleep(3000);
 	            
-//               driver.findElement(By.xpath("//*[@class='text-primary dstyle'][contains(text(),'IN2IT Systems and Services')]")).click();
+            
+	//            driver.findElement(By.xpath("//*[@class='text-primary dstyle'][contains(text(),'IN2IT Systems and Services')]")).click();
               
 		}
 			
@@ -213,7 +215,29 @@ public class Login extends Base
 		}
 		
 	}
+	public void verifylogo()
 	
+	{
+		try 
+		{		            
+			System.out.println("Launching the browser");
+			Application.waitforanelement(AD);
+			String Tool=Proeprtyfile.Getpropertyvalue("url");
+			getlaunch(Tool);
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);			
+
+			Assert.assertTrue(logoo.isDisplayed());
+			
+		
+	    }	
+		
+		catch (Exception e) 
+		{
+			System.out.println("Issue in createtenantadmin method"+e); 
+
+		}
+	
+}
 	
 	public void Entertennatdetails()
 		{

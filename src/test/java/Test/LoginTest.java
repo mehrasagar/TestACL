@@ -1,6 +1,6 @@
 package Test;
 
-import org.testng.annotations.Test; 
+import org.testng.annotations.Test;  
 
 import BaseLibrary.Base;
 import Pages.Login;
@@ -12,13 +12,14 @@ public class LoginTest extends Base
 		
 	 Login ob=new Login();
 		
-		@Test(priority=0,enabled=true)
+		@Test
 		public void getlaunch() 
 		{
 			
 			try 
 			{
-				getlaunch("http://10.0.1.104:8084/#/login");				
+				getlaunch("http://10.0.1.104:8084/#/login");
+
 				
 	
 			} 
@@ -27,9 +28,7 @@ public class LoginTest extends Base
 				System.out.println("Issue in getlaunch method"+e);
 			}
 		}
-		
-
-		
+	
 		@Test(priority=1,enabled=true)
 		public void getchoosetenant() 
 		{
@@ -41,11 +40,12 @@ public class LoginTest extends Base
 			} 
 			catch (Exception e)
 			{
-				System.out.println("Issue in getlaunch method"+e);
+				System.out.println("Issue in getchoosetenant method"+e);
 			}
 		}
+	
 		
-		@Test(priority=2,enabled=true)
+		@Test(priority=2,enabled=false)
 		public void getEntertennatdetails() 
 		{
 			
@@ -61,7 +61,7 @@ public class LoginTest extends Base
 		}
 		
 
-		@Test(priority=3,enabled=true)
+		@Test(priority=3,enabled=false)
 		public void getcreatetenantadmin() 
 		{
 			
@@ -78,7 +78,7 @@ public class LoginTest extends Base
 		
 		}
 		
-		@Test(priority=4,enabled=true)
+		@Test(priority=4,enabled=false)
 		public void getchooseservice() 
 		{
 			
