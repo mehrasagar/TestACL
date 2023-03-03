@@ -1,5 +1,6 @@
 package Test;
 
+import org.testng.annotations.BeforeTest; 
 import org.testng.annotations.Test;  
 
 import BaseLibrary.Base;
@@ -12,7 +13,7 @@ public class LoginTest extends Base
 		
 	 Login ob=new Login();
 		
-		@Test
+		@BeforeTest
 		public void getlaunch() 
 		{
 			

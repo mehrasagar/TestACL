@@ -189,6 +189,7 @@ public class Login extends Base
 	           WebElement P=driver.findElement(By.xpath("//*[@class='companyText']"));
 	            String SP=P.getText();
 	            String E="Customer Management Portal";
+	            
 	            if(SP.contains("E")) 
 				{
 					System.out.println("Text: " +SP+	" is present.");

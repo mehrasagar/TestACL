@@ -6,6 +6,7 @@
       <class name="Test.LoginTest">
         <methods>
           <include name="getlaunch"/>
+          <include name="getchoosetenant"/>
         </methods>
       </class> <!-- Test.LoginTest -->
     </classes>
