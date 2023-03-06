@@ -12,25 +12,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   
   
-   <build>
-   <plugins>
-   <plugin>
-   
-        <groupId>org.apache.maven.plugins</groupId>            
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
-        <configuration>
-        <testFailureIgnore>true</testFailureIgnore>
-            <source>1.8</source>
-            <target>1.8</target>
-        </configuration>
-    </plugin>
-   </plugins>
-   </build>
-
   <dependencies>
 
 
@@ -52,11 +38,18 @@
 </dependency>
 
 
-<!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.io -->
- <dependency>
-    <groupId>org.apache.directory.studio</groupId>
-    <artifactId>org.apache.commons.io</artifactId>
-    <version>2.4</version>
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>4.1.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>4.1.0</version>
 </dependency>
 
 
@@ -66,7 +59,6 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.5</version>
-    <scope>test</scope>
 </dependency>
 
 
@@ -78,11 +70,22 @@
 </dependency>
 
 
-
- 
-  
-  
   
     </dependencies>
+    
+     <build>
+   <plugins>
+   <plugin>
+   
+        <groupId>org.apache.maven.plugins</groupId>            
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+        <testFailureIgnore>true</testFailureIgnore>
+            <source>1.8</source>
+            <target>1.8</target>
+        </configuration>
+    </plugin>
+   </plugins>
+   </build>
   
 </project>

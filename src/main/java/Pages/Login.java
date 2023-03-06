@@ -1,8 +1,7 @@
 package Pages;
 
 
-import java.util.concurrent.TimeUnit;  
-
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -144,7 +143,7 @@ public class Login extends Base
 	@FindBy(xpath="//*[contains(text(),'Sign in')]")
 	private WebElement AD ;
 	
-	@FindBy(xpath="//*[@class='img-fluid innerImage']//..")
+	@FindBy(xpath="//*[@class='catsLogo ng-star-inserted']")
 	private WebElement logoo ;
 	
 	
@@ -176,7 +175,9 @@ public class Login extends Base
 	{
 		try 
 		{
-	       
+			
+			Boolean Display= driver.findElement(By.xpath("//*[@class='catsLogo ng-star-inserted']")).isDisplayed();
+			System.out.println(Display);
             username.sendKeys("sagar.mehra");
 			Thread.sleep(2000);
 			pwd.sendKeys("admin");
@@ -188,22 +189,10 @@ public class Login extends Base
 	          //Verify superadmin page
 	           WebElement P=driver.findElement(By.xpath("//*[@class='companyText']"));
 	            String SP=P.getText();
-	            String E="Customer Management Portal";
+				Assert.assertTrue(SP.contains("Customer Management Portal"));
 	            
-	            if(SP.contains("E")) 
-				{
-					System.out.println("Text: " +SP+	" is present.");
-				}
-				
-				else
-				{
-					System.out.println("Text: " +SP+	"is not present.");
-				}
-	           
-	            Thread.sleep(3000);
 	            
             
-	//            driver.findElement(By.xpath("//*[@class='text-primary dstyle'][contains(text(),'IN2IT Systems and Services')]")).click();
               
 		}
 			
@@ -216,29 +205,6 @@ public class Login extends Base
 		}
 		
 	}
-	public void verifylogo()
-	
-	{
-		try 
-		{		            
-			System.out.println("Launching the browser");
-			Application.waitforanelement(AD);
-			String Tool=Proeprtyfile.Getpropertyvalue("url");
-			getlaunch(Tool);
-            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);			
-
-			Assert.assertTrue(logoo.isDisplayed());
-			
-		
-	    }	
-		
-		catch (Exception e) 
-		{
-			System.out.println("Issue in createtenantadmin method"+e); 
-
-		}
-	
-}
 	
 	public void Entertennatdetails()
 		{
