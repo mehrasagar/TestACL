@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21856" started-at="2023-03-06T15:54:40 IST" finished-at="2023-03-06T15:55:02 IST">
+  <suite name="Default suite" duration-ms="5001" started-at="2023-03-14T11:11:19 IST" finished-at="2023-03-14T11:11:24 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21856" started-at="2023-03-06T15:54:40 IST" finished-at="2023-03-06T15:55:02 IST">
+    <test name="Default test" duration-ms="5001" started-at="2023-03-14T11:11:19 IST" finished-at="2023-03-14T11:11:24 IST">
       <class name="Test.LoginTest">
-        <test-method status="PASS" signature="getlaunch()[pri:0, instance:Test.LoginTest@9573584]" name="getlaunch" is-config="true" duration-ms="14838" started-at="2023-03-06T15:54:40 IST" finished-at="2023-03-06T15:54:55 IST">
+        <test-method status="PASS" signature="getlaunch()[pri:0, instance:Test.LoginTest@9573584]" name="getlaunch" is-config="true" duration-ms="4950" started-at="2023-03-14T11:11:19 IST" finished-at="2023-03-14T11:11:24 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getlaunch -->
-        <test-method status="PASS" signature="getchoosetenant()[pri:1, instance:Test.LoginTest@9573584]" name="getchoosetenant" duration-ms="6930" started-at="2023-03-06T15:54:55 IST" finished-at="2023-03-06T15:55:02 IST">
+        <test-method status="PASS" signature="getchoosetenant()[pri:1, instance:Test.LoginTest@9573584]" name="getchoosetenant" duration-ms="10" started-at="2023-03-14T11:11:24 IST" finished-at="2023-03-14T11:11:24 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getchoosetenant -->

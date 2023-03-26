@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -66,6 +67,12 @@ static Actions act;
 	 {
 	 System.out.println("Issue in RIght click method "+e);
 	 }
+	}
+	
+	public static void clickByxpath(WebDriver ldriver,String path)
+	{
+		Actions act=new Actions(ldriver);
+		act.moveToElement(ldriver.findElement(By.xpath(path))).click().build().perform();
 	}
 
 

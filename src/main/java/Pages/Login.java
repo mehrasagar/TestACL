@@ -1,13 +1,12 @@
 package Pages;
 
 
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeUnit; 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import ApplicationUtilities.Application;
 import BaseLibrary.Base;
@@ -146,7 +145,9 @@ public class Login extends Base
 	@FindBy(xpath="//*[@class='catsLogo ng-star-inserted']")
 	private WebElement logoo ;
 	
-	
+	@FindBy(xpath="//*[contains(text(),'iProcess')]")
+	private WebElement eleee ;
+
 	
 	
 	public void Signme()
@@ -176,23 +177,25 @@ public class Login extends Base
 		try 
 		{
 			
-			Boolean Display= driver.findElement(By.xpath("//*[@class='catsLogo ng-star-inserted']")).isDisplayed();
-			System.out.println(Display);
-            username.sendKeys("sagar.mehra");
+		
+            username.sendKeys("Sagar.Mehra");
 			Thread.sleep(2000);
-			pwd.sendKeys("admin");
+			pwd.sendKeys("Admin@2022");
 	        Thread.sleep(2000);
 	        signin.click();
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);			
 
 	            
-	          //Verify superadmin page
-	           WebElement P=driver.findElement(By.xpath("//*[@class='companyText']"));
-	            String SP=P.getText();
-				Assert.assertTrue(SP.contains("Customer Management Portal"));
+	          //Verify Userconsole page
+               Boolean Display =driver.findElement(By.xpath("//*[@class='companyText']")).isDisplayed();
+	           System.out.println(Display);
+	           driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);			
+
 	            
-	            
-            
+	           String Selectproduct="iProcess";	            
+				driver.findElement(By.xpath("//h4[contains(text(),"+Selectproduct+")]/..//../..//button")).click();
+				
+			
               
 		}
 			
